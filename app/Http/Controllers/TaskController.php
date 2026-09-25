@@ -30,8 +30,8 @@ class TaskController extends Controller
 
         Task::create($request->all());
 
-        return redirect('/tasks')
-    ->with('success', 'Task updated successfully!');
+        return response('', 302)
+            ->header('Location', '/tasks');
     }
 
     public function edit(Task $task)
@@ -50,15 +50,15 @@ class TaskController extends Controller
 
         $task->update($request->all());
 
-        return redirect()->route('tasks.index')
-            ->with('success', 'Task updated successfully!');
+        return response('', 302)
+            ->header('Location', '/tasks');
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
 
-        return redirect()->route('tasks.index')
-            ->with('success', 'Task deleted successfully!');
+        return response('', 302)
+            ->header('Location', '/tasks');
     }
 }

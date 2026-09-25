@@ -116,20 +116,20 @@
    <a href="/tasks/{{ $task->id }}/edit" class="edit">
     Edit
 </a>
-                        <form action="/tasks/{{ $task->id }}"
+                       <form action="/tasks/{{ $task->id }}"
       method="POST"
       style="display:inline;">
 
-                            @csrf
-                            @method('DELETE')
+    @csrf
+    @method('DELETE')
 
-                            <button type="submit"
-                                    class="delete"
-                                    onclick="return confirm('Delete this task?')">
-                                Delete
-                            </button>
+    <button type="submit"
+            class="delete"
+            onclick="return confirm('Delete this task?')">
+        Delete
+    </button>
 
-                        </form>
+</form>
 
                     </td>
                 </tr>
